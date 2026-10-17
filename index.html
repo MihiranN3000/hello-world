@@ -1,59 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First GitHub Pages Site</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gamana – Sri Lanka Bus Guide</title>
+  <meta name="description" content="Bus timetables, fares, trip planning and seat booking for Sri Lankan bus routes.">
+  <meta name="theme-color" content="#7a1626">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Hello, I'm Mihiran Nethranjana👋</h1>
-    <p>This website is hosted for free on GitHub Pages.</p>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#timetable" aria-label="Gamana home">
+        <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 3h14a2 2 0 0 1 2 2v11a2 2 0 0 1-1 1.73V20a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2H7v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2.27A2 2 0 0 1 3 16V5a2 2 0 0 1 2-2Zm0 3v5h14V6H5Zm2 7.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm10 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+        </svg>
+        <span>Gamana<small>Sri Lanka bus guide</small></span>
+      </a>
+      <nav class="tabs" id="tabs" aria-label="Sections">
+        <span class="tab-indicator" id="tabIndicator" aria-hidden="true"></span>
+        <a href="#timetable" data-view="timetable">Timetables</a>
+        <a href="#fares" data-view="fares">Fares</a>
+        <a href="#planner" data-view="planner">Trip planner</a>
+        <a href="#book" data-view="book">Book a seat</a>
+        <a href="#bookings" data-view="bookings">My bookings <span class="count" id="bookingCount" hidden></span></a>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <p class="notice wrap">Sample data for demonstration. Confirm times and fares with NTC / SLTB before you travel.</p>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I'm learning web development and testing how to publish a site with GitHub.</p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Project One</h3>
-          <p>A short description of your first project.</p>
-        </div>
-        <div class="card">
-          <h3>Project Two</h3>
-          <p>A short description of your second project.</p>
-        </div>
-        <div class="card">
-          <h3>Project Three</h3>
-          <p>A short description of your third project.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Click the button to say hi!</p>
-      <button id="helloBtn">Say Hello</button>
-      <p id="message"></p>
-    </section>
+  <main class="wrap">
+    <section id="view-timetable" class="view" hidden></section>
+    <section id="view-fares" class="view" hidden></section>
+    <section id="view-planner" class="view" hidden></section>
+    <section id="view-book" class="view" hidden></section>
+    <section id="view-bookings" class="view" hidden></section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Mihiran. Built with HTML, CSS &amp; JavaScript.</p>
-  </footer>
+  <footer class="wrap footer">Gamana · Sri Lanka bus timetables, fares &amp; bookings</footer>
 
-  <script src="script.js"></script>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
